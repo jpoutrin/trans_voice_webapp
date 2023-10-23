@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "==2.0.1"
+inaspeechsegmenter = "==0.6.8"
+werkzeug = "==2.2.2"
+pywebview = "*"
+pyinstaller = "*"
+qtpy = "*"
+pyqt5 = "*"
+pyqtwebengine = "*"
+numpy = "==1.23"
+ffmpeg = "==1.4"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+dl-models = "./scripts/dl-models.sh"
+build-app = "pyinstaller main.spec"
+app = "python main.py"
+server = "flask run --reload --debugger"
+clean = "rm -rf build dist models"
+osx-check-perms = "xattr -l ./dist/voice.app"
